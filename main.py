@@ -1,16 +1,19 @@
-# This is a sample Python script.
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import asyncio
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+from matrix_spiral.matrix import get_matrix
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+URL = (
+    "https://raw.githubusercontent.com/"
+    "avito-tech/python-trainee-assignment/main/matrix.txt"
+)
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+async def main():
+    result = await get_matrix(URL)
+    print("Результат:", result)
+
+
+if __name__ == "__main__":
+    asyncio.run(main())

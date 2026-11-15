@@ -1,0 +1,4 @@
+aiohttp==3.13.5
+pytest
+pytest-asyncio
+aioresponses==0.7.9
