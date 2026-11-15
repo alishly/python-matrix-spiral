@@ -54,6 +54,9 @@ def parse_matrix(text: str) -> List[List[int]]:
 
 def spiral_traversal(matrix: List[List[int]]) -> List[int]:
     """Обходит матрицу против часовой стрелки."""
+    if not matrix:
+        raise MatrixFormatError("Матрица пустая")
+
     result = []
 
     top = 0

@@ -1,6 +1,7 @@
 import pytest
 from aioresponses import aioresponses
 
+
 from matrix_spiral.matrix import (
     parse_matrix,
     spiral_traversal,
@@ -66,6 +67,11 @@ def test_invalid_matrix():
 
     with pytest.raises(MatrixFormatError):
         parse_matrix(text)
+
+
+def test_spiral_traversal_empty_matrix():
+    with pytest.raises(MatrixFormatError):
+        spiral_traversal([])
 
 
 @pytest.mark.asyncio
